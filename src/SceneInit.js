@@ -3,9 +3,7 @@ import { Rhino3dmLoader } from 'https://unpkg.com/three@0.164.1/examples/jsm/loa
 import { OrbitControls } from 'https://unpkg.com/three@0.164.1/examples/jsm/controls/OrbitControls.js';
 import { Tween } from 'https://unpkg.com/three@0.164.1/examples/jsm/libs/tween.module.js'
 
-const { scene, renderer, camera, controls } = init();
-
-function init() {
+function SceneInit() {
     const scene = new THREE.Scene();
 
     const sceneContainer = document.getElementById('scene-container');
@@ -44,6 +42,6 @@ function init() {
     }
 
 }
-init();
+SceneInit();
 
-export default init
+export default SceneInit
