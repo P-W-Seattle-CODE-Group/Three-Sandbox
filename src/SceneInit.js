@@ -1,7 +1,5 @@
 import * as THREE from 'https://unpkg.com/three@0.164.1/build/three.module.js';
-import { Rhino3dmLoader } from 'https://unpkg.com/three@0.164.1/examples/jsm/loaders/3DMLoader.js';
 import { OrbitControls } from 'https://unpkg.com/three@0.164.1/examples/jsm/controls/OrbitControls.js';
-import { Tween } from 'https://unpkg.com/three@0.164.1/examples/jsm/libs/tween.module.js'
 
 function SceneInit() {
     const scene = new THREE.Scene();
@@ -10,16 +8,16 @@ function SceneInit() {
     const sceneWidth = sceneContainer.clientWidth;
     const sceneHeight = sceneContainer.clientHeight;
 
-    const renderer = new THREE.WebGLRenderer(
-        {
+
+    const renderer = new THREE.WebGLRenderer({
             antialias: true,
             alpha: true,
-            size: {
-                width: sceneWidth,
-                height: sceneHeight
-            }
-        }
-    );
+    });
+    renderer.setSize (sceneWidth, sceneHeight);
+    renderer.setPixelRatio (window.devicePixelRatio);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
     sceneContainer.append(renderer.domElement)
 
     const camera = new THREE.PerspectiveCamera(
@@ -42,6 +40,5 @@ function SceneInit() {
     }
 
 }
-SceneInit();
 
 export default SceneInit
