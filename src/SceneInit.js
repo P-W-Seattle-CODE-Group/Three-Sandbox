@@ -26,14 +26,18 @@ function SceneInit() {
         0.1,                        //Near Clipping
         1000                        //Far Clipping
     );
+    camera.position.set (300, 300, 500);
+    camera.up = new THREE.Vector3 (0, 0, 1);
 
     const controls = new OrbitControls(
         camera,
         renderer.domElement
     );
+    controls.target = new THREE.Vector3(0,0,0);
 
     return {
         scene: scene,
+        sceneContainer : sceneContainer,
         renderer: renderer,
         camera: camera,
         controls: controls
