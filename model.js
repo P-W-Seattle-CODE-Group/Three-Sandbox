@@ -6,13 +6,15 @@ import { Tween } from 'https://unpkg.com/three@0.164.1/examples/jsm/libs/tween.m
 
 //Function Imports
 import SceneInit from './src/SceneInit';
+import fetch3dmModel from './src/Load3dm';
+import windowResize from './src/utils/HandleWindowResize';
 
 //Initialize Scene
 const { scene, renderer, camera, controls } = SceneInit();
 
-/*
-console.log(scene)
-console.log(renderer)
-console.log(camera)
-console.log(controls)
-*/
+
+//Load 3dm Model
+const testModel = fetch3dmModel('', true, false);
+
+//Window Resize
+windowResize();
