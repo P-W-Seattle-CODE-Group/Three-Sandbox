@@ -6,11 +6,18 @@ export function ambientLight (color, intensity, scene) {
     scene.add(light);
 }
 
-export function spotLight (color, location, scene) {
+export function spotLight (color, intensity, location, scene) {
     const lightColor = new THREE.Color ( color )
-    const light = new THREE.SpotLight(lightColor)
+    const light = new THREE.SpotLight(lightColor, intensity)
     light.position.set(location)
     scene.add(light)
 }
 
-export default {ambientLight, spotLight}
+export function hemisphereLight (skyColor, groundColor, intensity, scene) {
+    const sColor = new THREE.Color( skyColor )
+    const gColor = new THREE.Color( groundColor )
+    const light = new THREE.HemisphereLight (sColor, gColor, intensity)
+    scene.add(light)
+}
+
+export default {ambientLight, spotLight, hemisphereLight}

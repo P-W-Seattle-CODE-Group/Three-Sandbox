@@ -8,21 +8,22 @@ import { Tween } from 'https://unpkg.com/three@0.164.1/examples/jsm/libs/tween.m
 import SceneInit from './src/model/SceneInit';
 import fetch3dmModel from './src/model/Load3dm';
 import windowResize from './src/utils/HandleWindowResize';
-import {ambientLight, spotLight} from './src/model/Lighting';
+import {ambientLight, hemisphereLight, spotLight} from './src/model/Lighting';
 
 //Initialize Scene
 const { scene, sceneContainer, renderer, camera, controls } = SceneInit();
 camera.position.set(300, 300, 600)
+
+//Lighting Setup
+ambientLight('rgb(255,255,255)', 0.5, scene);
+spotLight('rgb(255,255,255)', 0.25, (200,200,400), scene);
+hemisphereLight('rgb(255,255,255)', 'rgb(155,155,155)', 1.0, scene);
 
 //Load 3dm Model
 const testModel = await fetch3dmModel('/eecs-simple.3dm', true, false, scene);
 
 //Window Resize
 windowResize(camera, renderer, sceneContainer);
-
-//Lighting Setup
-ambientLight('rgb(255,255,255)', 1.0, scene);
-spotLight('rgb(255,255,255)', (200,200,400), scene);
 
 function render () {
     camera.updateMatrixWorld();
