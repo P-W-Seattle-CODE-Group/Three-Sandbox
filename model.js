@@ -22,6 +22,7 @@ hemisphereLight('rgb(255,255,255)', 'rgb(155,155,155)', 1.0, scene);
 
 //Load 3dm Model
 const testModel = await fetch3dmModel('/Test-Model.3dm', true, false, scene);
+console.log(testModel)
 
 //Interaction
 window.addEventListener('mousemove', function(event) {
