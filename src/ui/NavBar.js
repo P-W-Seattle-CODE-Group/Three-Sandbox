@@ -37,16 +37,36 @@ export function DynamicNavBar(backColor) {
 export function NavBarButton(backColor) {
     const container = document.getElementById('nav-bar-container')
     const button = document.createElement('div')
+    container.append(button)
     button.style.backgroundColor = backColor
     button.style.boxShadow = '0px 0px 10px rgba(44, 44, 44, 0.5)'
-    button.style.width = '10%'
-    button.style.height = '90%'
-    button.style.margin = '10px'
-    button.style.borderRadius = '10px'
-    button.style.position = 'relative'
-    button.style.top = '-20%'
 
-    container.append(button)
+    function updateButton() {
+        if (window.innerWidth <= 1000) {
+            container.style.flexDirection = 'row'
+            button.style.width = '10%'
+            button.style.height = '90%'
+            button.style.margin = '10px'
+            button.style.borderRadius = '10px'
+            button.style.position = 'relative'
+            button.style.top = '-20%'
+            button.style.left = '0%'
+        } else {
+            container.style.flexDirection = 'column'
+            button.style.width = '50%'
+            button.style.height = '10%'
+            button.style.margin = '10px'
+            button.style.borderRadius = '10px'
+            button.style.position = 'relative'
+            button.style.top = '0%'
+            button.style.left = '30%'
+
+        }
+    }
+    updateButton();
+
+    window.addEventListener('resize', updateButton)
+    return (button)
 }
 
 
