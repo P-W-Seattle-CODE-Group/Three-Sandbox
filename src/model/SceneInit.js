@@ -33,6 +33,8 @@ function SceneInit() {
         renderer.domElement
     );
     controls.target = new THREE.Vector3(0,0,0);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05; 
 
     return {
         scene: scene,
