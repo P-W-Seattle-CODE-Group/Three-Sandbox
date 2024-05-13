@@ -17,7 +17,7 @@ export function DynamicNavBar(backColor) {
             mainDiv.style.top = '90%'
             mainDiv.style.left = '2.5%'
             mainDiv.style.width = '95%'
-            mainDiv.style.height = '10%'
+            mainDiv.style.height = '100px'
             mainDiv.style.borderRadius = '20px 20px 0px 0px'
         } else {
             mainDiv.style.top = '1%'
@@ -44,8 +44,8 @@ export function NavBarButton(backColor) {
     function updateButton() {
         if (window.innerWidth <= 1000) {
             container.style.flexDirection = 'row'
-            button.style.width = '10%'
-            button.style.height = '90%'
+            button.style.width = '100px'
+            button.style.height = '100px'
             button.style.margin = '10px'
             button.style.borderRadius = '10px'
             button.style.position = 'relative'
@@ -53,8 +53,8 @@ export function NavBarButton(backColor) {
             button.style.left = '0%'
         } else {
             container.style.flexDirection = 'column'
-            button.style.width = '50%'
-            button.style.height = '10%'
+            button.style.width = '100px'
+            button.style.height = '100px'
             button.style.margin = '10px'
             button.style.borderRadius = '10px'
             button.style.position = 'relative'
