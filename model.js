@@ -8,22 +8,25 @@ import { Tween } from 'https://unpkg.com/three@0.164.1/examples/jsm/libs/tween.m
 import SceneInit from './src/model/SceneInit';
 import fetch3dmModel from './src/model/Load3dm';
 import windowResize from './src/utils/HandleWindowResize';
-import {ambientLight, hemisphereLight, spotLight} from './src/model/Lighting';
+import {ThrePointSpotLight, ambientLight, hemisphereLight} from './src/model/Lighting';
 import {onPointerHover} from './src/model/Interaction';
 import { Plane } from './src/model/BaseGeometry';
+import {getObjectCenters} from './src/model/GetObjectCenters';
 
 //Initialize Scene
 const { scene, sceneContainer, renderer, camera, controls } = SceneInit();
 camera.position.set(25, -25, 25)
 
 //Lighting Setup
-ambientLight('rgb(255,255,255)', 0.5, scene);
-spotLight('rgb(255,255,255)', 50, 20, -20, 30, scene);
-//hemisphereLight('rgb(255,255,255)', 'rgb(155,155,155)', 1.0, scene);
+ambientLight('rgb(255,255,255)', 1, scene);
+ThrePointSpotLight('rgb(244,244,239)', 50, 10, -10, 50, scene);
+//hemisphereLight('rgb(255,255,255)', 'rgb(155,155,155)', 1, scene);
 
 //Load 3dm Model
 const testModel = await fetch3dmModel('/Test-Model.3dm', true, false, scene);
 console.log(testModel)
+const testModelCenters = getObjectCenters(testModel)
+console.log(testModelCenters)
 
 //Generic Three Objects
 Plane(scene);
@@ -47,4 +50,4 @@ function animate() {
 }
 animate();
 
-console.log(scene)
+//console.log(scene)

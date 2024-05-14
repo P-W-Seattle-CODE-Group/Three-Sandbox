@@ -7,6 +7,7 @@ export function Plane(scene) {
     const planeMat = new THREE.MeshStandardMaterial( {color: planeColor} )
     const plane = new THREE.Mesh ( planeGeo, planeMat )
     plane.receiveShadow = true
+    plane.material.roughness = 0
     scene.add( plane )
 }
 

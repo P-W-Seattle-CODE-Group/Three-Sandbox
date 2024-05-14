@@ -24,7 +24,9 @@ style.css                   //Main styling file
         - SceneInit.js 
         - Lighting.js 
         - Load3dm.js 
+        - BaseGeometry.js 
     ↳ /ui                   //Folder containing any functions related to UI interaction
+        - NavBar.js 
     ↳ /utils                //Folder containing any basic util functions
         - HandleWindowResize.js 
 ```

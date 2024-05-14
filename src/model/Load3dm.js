@@ -12,6 +12,8 @@ async function fetch3dmModel(modelURL, castShadow, receiveShadow, scene) {
             objects.push(object)
             objects.forEach((object) => {
                 object.children.forEach((child) => {
+                    child.material.roughness = 1 - child.material.reflectivity
+                    child.material.sheenRoughness = 1 - child.material.reflectivity
                     if (castShadow === true) {
                         child.castShadow = true
                     } else {

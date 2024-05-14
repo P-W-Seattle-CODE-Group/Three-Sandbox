@@ -41,26 +41,37 @@ export function NavBarButton(backColor) {
     button.style.backgroundColor = backColor
     button.style.boxShadow = '0px 0px 10px rgba(44, 44, 44, 0.5)'
 
+    
     function updateButton() {
+        const horStyle = {
+            width: '100px',
+            height: '100px',
+            margin: '10px',
+            borderRadius: '10px',
+            position: 'relative',
+            top: '-20%',
+            left: '0%'
+        }
+    
+        const verStyle = {
+            width: '100px',
+            height: '100px',
+            margin: '10px',
+            borderRadius: '10px',
+            position: 'relative',
+            top: '0%',
+            left: '20%'
+        }
         if (window.innerWidth <= 1000) {
             container.style.flexDirection = 'row'
-            button.style.width = '100px'
-            button.style.height = '100px'
-            button.style.margin = '10px'
-            button.style.borderRadius = '10px'
-            button.style.position = 'relative'
-            button.style.top = '-20%'
-            button.style.left = '0%'
+            for (const [key, value] of Object.entries(horStyle)) {
+                button.style[key] = value
+            }
         } else {
             container.style.flexDirection = 'column'
-            button.style.width = '100px'
-            button.style.height = '100px'
-            button.style.margin = '10px'
-            button.style.borderRadius = '10px'
-            button.style.position = 'relative'
-            button.style.top = '0%'
-            button.style.left = '30%'
-
+            for (const [key, value] of Object.entries(verStyle)) {
+                button.style[key] = value
+            }
         }
     }
     updateButton();
