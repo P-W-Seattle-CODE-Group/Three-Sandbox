@@ -17,12 +17,12 @@ export function DynamicNavBar(backColor) {
             mainDiv.style.top = '90%'
             mainDiv.style.left = '2.5%'
             mainDiv.style.width = '95%'
-            mainDiv.style.height = '100px'
+            mainDiv.style.height = '10%'
             mainDiv.style.borderRadius = '20px 20px 0px 0px'
         } else {
             mainDiv.style.top = '1%'
             mainDiv.style.left = '0%'
-            mainDiv.style.width = '10%'
+            mainDiv.style.width = '100px'
             mainDiv.style.height = '98%'
             mainDiv.style.borderRadius = '0px 20px 20px 0px'
         }

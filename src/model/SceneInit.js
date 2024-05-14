@@ -17,6 +17,7 @@ function SceneInit() {
     renderer.setPixelRatio (window.devicePixelRatio);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.gammaFactor = 0;
 
     sceneContainer.append(renderer.domElement)
 
