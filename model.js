@@ -12,6 +12,7 @@ import {ThrePointSpotLight, ambientLight, hemisphereLight} from './src/model/Lig
 import {onPointerHover} from './src/model/Interaction';
 import { Plane } from './src/model/BaseGeometry';
 import {getObjectCenters} from './src/model/GetObjectCenters';
+import { FloatingTags } from './src/ui/FloatingTags';
 
 //Initialize Scene
 const { scene, sceneContainer, renderer, camera, controls } = SceneInit();
@@ -25,8 +26,8 @@ ThrePointSpotLight('rgb(244,244,239)', 50, 10, -10, 50, scene);
 //Load 3dm Model
 const testModel = await fetch3dmModel('/Test-Model.3dm', true, false, scene);
 console.log(testModel)
-const testModelCenters = getObjectCenters(testModel)
-console.log(testModelCenters)
+FloatingTags(testModel)
+
 
 //Generic Three Objects
 Plane(scene);
@@ -45,6 +46,7 @@ function render () {
 }
 function animate() {
     requestAnimationFrame(animate)
+    getObjectCenters(testModel, camera)
     controls.update();
     render();
 }
