@@ -2,6 +2,7 @@
 import * as THREE from 'https://unpkg.com/three@0.164.1/build/three.module.js';
 
 export function getObjectCenters(targObjects, camera) {
+    console.log(camera.position)
     const centers = []
     const projCenters = []
     targObjects.forEach((object) => {
@@ -30,6 +31,8 @@ export function getObjectCenters(targObjects, camera) {
 
         tagDivs[i].style.left = (parseInt(x) - (tagDivs[i].clientWidth / 2)) + 'px'
         tagDivs[i].style.top = (parseInt(y) - (tagDivs[i].clientHeight / 2)) + 'px'
+
+        //TODO: Find distance between camera and points, adjust scale/opacity of div based on distance
     }
 
 
