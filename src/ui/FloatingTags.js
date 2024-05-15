@@ -13,9 +13,9 @@ export function FloatingTags(objects) {
             tagCont.append(tagDiv)
             
             const divStyle = {
-                backgroundColor: 'rgba(100, 100, 100, 0.5)',
+                backgroundColor: 'rgba(243, 243, 239, 0.95)',
                 width: '100px',
-                height: '100px',
+                height: '50px',
                 position: 'absolute',
                 borderRadius: '20px'
             }

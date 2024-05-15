@@ -25,11 +25,18 @@ style.css                   //Main styling file
         - Lighting.js 
         - Load3dm.js 
         - BaseGeometry.js 
+        - GetObjectsCenters.js 
     ↳ /ui                   //Folder containing any functions related to UI interaction
         - NavBar.js 
+        - FloatingTags.js 
     ↳ /utils                //Folder containing any basic util functions
         - HandleWindowResize.js 
 ```
 
 
 ## To-Do's
+
+## Misc Notes
+- Locate Rhino cameras, and define Three cameras based on location and order, add next/back button to create slideshow (from Victor)
+
+- UI to allow users to change model colors or rendering (from Matt)
